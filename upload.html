@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Compliment Machine</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Arial, sans-serif; margin: 4rem; }
+      form { max-width: 640px; padding: 2rem; border-radius: 1rem; box-shadow: 0 10px 25px rgba(0,0,0,.08); }
+      label { display: block; margin: .5rem 0 .25rem; }
+      input, select, button { width: 100%; padding: .75rem; margin-bottom: .75rem; border-radius: .5rem; border: 1px solid #ddd; }
+      button { cursor: pointer; }
+    </style>
+  </head>
+  <body>
+    <form method="POST" action="/submit">
+      <h1>Welcome to Jaye's Compliment Machine✨</h1>
+      <label for="name">Your name</label>
+      <input id="name" name="name" placeholder="What's your name" required />
+
+      <label for="mood">Your mood</label>
+      <select id="mood" name="mood">
+        <option value="brilliant🤩">brilliant</option>
+        <option value="stressed😖">unstoppable</option>
+        <option value="just so-so🫥">radiant</option>
+        <option value="meh😶" selected>great</option>
+      </select>
+
+      <label for="emoji">An emoji</label>
+      <input id="emoji" name="emoji" placeholder="✨" />
+
+      <button type="submit">Generate compliment →</button>
+    </form>
+  </body>
+</html>
