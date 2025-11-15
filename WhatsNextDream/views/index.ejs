@@ -1,0 +1,20 @@
+<!-- views/index.ejs -->
+<!-- Renders the submission form. Uses layout.ejs as the wrapper. -->
+
+<section class="card">
+  <h1>Share Your Dreams</h1>
+  <p>Tell us what you just achieved and what you want next. We connect everyone’s steps into a shared map.</p>
+
+  <form method="POST" action="/submit" class="dream-form">
+    <label for="previousDream">Previous Dream (achieved):</label>
+    <input id="previousDream" name="previousDream" type="text" required placeholder="e.g., Launch my first exhibition" />
+
+    <label for="nextDream">Next Dream (what's next?):</label>
+    <input id="nextDream" name="nextDream" type="text" required placeholder="e.g., Curate an international group show" />
+
+    <button type="submit">Connect My Next Dream →</button>
+  </form>
+
+  <p class="meta">Total submissions so far: <strong><%= totalSubmissions %></strong></p>
+  <p class="hint">After submitting, you will see a graph view with connections from everyone's journeys.</p>
+</section>

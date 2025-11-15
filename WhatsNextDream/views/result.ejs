@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title><%= centerPrev %> — Next steps</title>
+  <style>
+    body{ font-family: ui-sans-serif, system-ui; margin:0; background:#f7f7fb; }
+    header{ background:#fff; border-bottom:1px solid #eee; padding:1rem; position:sticky; top:0; }
+    main{ max-width:800px; margin:2rem auto; background:#fff; padding:1.2rem 1.6rem; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.08); }
+    .muted{ color:#666; }
+    .list{ list-style:none; padding-left:0; display:grid; gap:.6rem; }
+    .item{ border:1px solid #eee; border-radius:10px; padding:.6rem .8rem; background:#fafafa; }
+    .by{ color:#666; font-size:.9rem; margin-left:.4rem; }
+    a{ color:#111; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/">← Back</a>
+  </header>
+
+  <main>
+    <h1>Next steps from “<%= centerPrev %>”</h1>
+
+    <% if (!related.length) { %>
+      <p class="muted">No submissions yet. Be the first!</p>
+    <% } else { %>
+      <ul class="list">
+        <% related.forEach(function(r){ %>
+          <li class="item">
+            <strong><%= r.nextDisplay %></strong>
+            <span class="by">by <%= r.user %></span>
+          </li>
+        <% }) %>
+      </ul>
+      <p class="muted">Total: <%= related.length %></p>
+    <% } %>
+
+    <p style="margin-top:1rem"><a href="/">Submit another</a></p>
+  </main>
+</body>
+</html>

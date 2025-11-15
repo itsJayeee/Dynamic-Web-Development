@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Dream Graph — Submit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root{
+      --bg: linear-gradient(135deg,#f7f7fb 0%, #eef1ff 40%, #f7f7fb 100%);
+      --card:#ffffff; --text:#111; --muted:#666; --border:#e7e7ee; --accent:#111;
+      --radius:16px; --shadow:0 20px 60px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+      color:var(--text); background:var(--bg);
+      display:grid; place-items:center; padding:24px;
+    }
+    .wrap{width:min(92vw, 720px);}
+    .card{
+      background:var(--card); border:1px solid var(--border); border-radius:var(--radius);
+      box-shadow:var(--shadow); overflow:hidden;
+    }
+    .header{
+      padding:24px 28px; border-bottom:1px solid var(--border);
+      display:flex; align-items:center; gap:14px;
+    }
+    h1{font-size:22px; line-height:1.2; margin:0}
+    .sub{color:var(--muted); margin-top:4px; font-size:14px}
+    .body{padding:26px 28px}
+    .stack{display:grid; gap:16px; margin-top:6px}
+    label{font-weight:600; font-size:14px}
+    .hint{font-weight:400; color:var(--muted); font-size:12px}
+    input{
+      width:100%; padding:12px 14px; margin-top:8px; border:1px solid var(--border);
+      border-radius:12px; font:inherit; outline:none;
+    }
+    input:focus{border-color:#c9ccff; box-shadow:0 0 0 4px rgba(80,90,255,.12)}
+    .row{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    @media (max-width:640px){ .row{grid-template-columns:1fr} }
+    .actions{display:flex; gap:12px; margin-top:18px}
+    button{
+      appearance:none; border:none; border-radius:12px; padding:12px 16px; font:inherit; cursor:pointer;
+    }
+    .btn-primary{background:var(--accent); color:#fff}
+    .btn-secondary{background:#f2f2f6; color:#111; border:1px solid var(--border)}
+    .footer{
+      padding:18px 28px; border-top:1px solid var(--border); color:var(--muted); font-size:12px;
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    }
+    a{color:inherit}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" role="region" aria-labelledby="title">
+      <div class="header">
+        <div>
+          <h1 id="title">Dream Graph</h1>
+          <div class="sub">Share your next dream and discover where others go from the same starting point.</div>
+        </div>
+      </div>
+
+      <div class="body">
+        <form action="/submit" method="POST" class="stack" autocomplete="on">
+          <div>
+            <label for="prev">Dream I achieved (previous)</label>
+            <div class="hint">e.g., Publish my first book</div>
+            <input id="prev" name="prev" required />
+          </div>
+
+          <div>
+            <label for="next">My next dream</label>
+            <div class="hint">e.g., Open an independent bookstore</div>
+            <input id="next" name="next" required />
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="user">Name (optional)</label>
+              <input id="user" name="user" placeholder="your name" />
+            </div>
+            <div>
+              <label for="tag">Tag (optional)</label>
+              <input id="tag" name="tag" placeholder="#art #research (not used yet)" />
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn-primary" type="submit">Submit & view</button>
+            <button class="btn-secondary" type="reset">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="footer">
+        <span>Tip: submit the same “previous” multiple times with different next steps to see the list grow.</span>
+        <span><a href="/">Home</a></span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
