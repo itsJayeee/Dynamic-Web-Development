@@ -14,3 +14,9 @@ all you need to do is to tell it your name, mood, and an single emoji!
 
 https://github.com/user-attachments/assets/1c44f7c1-d157-427a-a952-efd36021a89a
 
+week 3 -
+I made a dream machine - 
+Share your dream, then discover the next dreams of people who reached it.
+
+I learned how to use ejs. template, and deployed this on a public server!
+http://68.183.135.158:1234/
